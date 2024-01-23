@@ -1,0 +1,27 @@
+:root {
+	/**COLORS**/
+	--main-dark: #222823;
+	--main-light: #e5e7e6;
+	--secondary-dark: #508aa8;
+	--secondary-light: #d87cac;
+
+	--accent: #f96900;
+	--success: #4f9d69;
+	--danger: #b20d30;
+
+	--text-color: var(--main-dark);
+	--heading-color: var(--secondary-dark);
+
+	/**TEXT**/
+	--base-font-size: 16px;
+	--main-font-family: system-ui, sans-serif;
+	--secondary-font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas,
+		'DejaVu Sans Mono', monospace;
+
+	/**UTILITY**/
+	--simple-radius: 5px;
+	--simple-shadow: 9px 11px 16px -6px rgba(0, 0, 0, 0.15);
+
+	/**LAYOUT**/
+	--page-container-width: 1080px;
+}

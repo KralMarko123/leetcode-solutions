@@ -1,0 +1,26 @@
+.card {
+	width: fit-content;
+	padding: 1em;
+
+	background-color: var(--secondary-dark);
+	border-radius: var(--simple-radius);
+	box-shadow: var(--simple-shadow);
+}
+
+.success.card {
+	background-color: var(--success);
+}
+
+.danger.card {
+	background-color: var(--danger);
+}
+
+.accent.card {
+	background-color: var(--accent);
+}
+
+.page-container {
+	align-self: center;
+	width: 100%;
+	max-width: var(--page-container-width);
+}

@@ -1,0 +1,11 @@
+.page {
+	width: 100%;
+	min-height: 100vh;
+	padding: 1em;
+
+	background-color: var(--main-light);
+
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+}

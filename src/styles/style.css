@@ -1,0 +1,10 @@
+.title {
+	font-size: 3rem;
+}
+
+.paragraph {
+	color: var(--main-light);
+	font-size: 1.25rem;
+	text-align: justify;
+	line-height: 1.5;
+}
