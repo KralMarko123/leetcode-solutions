@@ -1,10 +1,10 @@
 import React from 'react';
 import './components.css';
 
-const Card = (props) => {
-	const extraClasses = props.extraClassNames ? props.extraClassNames?.map((ec) => ` ${ec}`) : '';
+const Card = ({ extraClassNames, children }) => {
+	const extraClasses = extraClassNames ? ' ' + extraClassNames.join(' ') : '';
 
-	return <div className={`card${extraClasses}`}>{props.children}</div>;
+	return <div className={`card${extraClasses}`}>{children}</div>;
 };
 
 export default Card;

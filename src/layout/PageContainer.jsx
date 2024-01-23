@@ -1,5 +1,5 @@
 import React from 'react';
-import './components.css';
+import './layout.css';
 
 const PageContainer = ({ children }) => {
 	return <div className='page-container'>{children}</div>;

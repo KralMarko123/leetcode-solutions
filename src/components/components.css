@@ -7,6 +7,10 @@
 	box-shadow: var(--simple-shadow);
 }
 
+.card.fullwidth {
+	width: 100%;
+}
+
 .success.card {
 	background-color: var(--success);
 }
@@ -19,8 +23,27 @@
 	background-color: var(--accent);
 }
 
-.page-container {
-	align-self: center;
-	width: 100%;
-	max-width: var(--page-container-width);
+.secondary.card {
+	background-color: var(--secondary-light);
+}
+
+.dark.card {
+	background-color: var(--main-dark);
+}
+
+.flag {
+	text-shadow: 2px 2px var(--main-dark);
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+
+.paragraph .highlight {
+	text-shadow: 2px 2px var(--main-dark);
+	font-weight: bold;
+	font-size: 1.5rem;
+	letter-spacing: 1px;
+}
+
+.paragraph.dark .highlight {
+	text-shadow: 2px 2px var(--main-light);
 }

@@ -1,5 +1,16 @@
 .title {
+	color: var(--main-dark);
 	font-size: 3rem;
+}
+
+.title.secondary {
+	font-size: 2rem;
+}
+
+.success .title,
+.accent .title,
+.danger .title {
+	color: var(--main-light);
 }
 
 .paragraph {
@@ -7,4 +18,18 @@
 	font-size: 1.25rem;
 	text-align: justify;
 	line-height: 1.5;
+}
+
+.paragraph.dark {
+	color: var(--main-dark);
+}
+
+.paragraph.code {
+	font-family: var(--secondary-font-family);
+	font-size: 1rem;
+	white-space: pre;
+}
+
+.paragraph br {
+	border: solid 50px transparent;
 }
