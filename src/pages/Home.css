@@ -1,0 +1,59 @@
+.home-page .problem-container {
+	width: 100%;
+
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	gap: 3em;
+
+	justify-content: space-around;
+}
+
+.home-page .problem-box {
+	position: relative;
+	padding: 1em;
+
+	box-shadow: 5px 5px var(--main-dark), 10px 10px var(--secondary-dark);
+
+	color: var(--main-light);
+	font-size: 1.25rem;
+	text-align: center;
+
+	cursor: pointer;
+}
+
+.home-page .problem-box .problem-box-number {
+	position: absolute;
+	bottom: -20%;
+	left: -5%;
+
+	background-color: var(--secondary-light);
+	padding: 0.25em;
+	font-weight: bold;
+	border-radius: var(--simple-radius);
+	box-shadow: var(--simple-shadow);
+
+	font-size: 1.5rem;
+
+	transform: rotate(15deg);
+}
+
+.home-page .problem-box.easy {
+	background-color: var(--success);
+}
+
+.home-page .problem-box,
+.home-page .problem-box .problem-box-number {
+	transition: all 0.25s ease-in-out;
+}
+
+.home-page .problem-box:hover,
+.home-page .problem-box:focus {
+	box-shadow: 11px 11px var(--main-dark), 19px 19px var(--secondary-dark);
+	transform: translate(-3px, -3px);
+}
+
+.home-page .problem-box:hover .problem-box-number,
+.home-page .problem-box:focus .problem-box-number {
+  bottom: -25%;
+	transform: rotate(0deg);
+}

@@ -9,19 +9,3 @@
 	flex-direction: column;
 	gap: 1em;
 }
-
-.details-page .details-actions {
-	display: flex;
-	align-items: center;
-	gap: 1em;
-}
-
-.details-page .details-actions .card {
-	cursor: pointer;
-	transition: all 0.25s ease-in-out;
-}
-
-.details-page .details-actions .card:hover,
-.details-page .details-actions .card:focus {
-	filter: brightness(95%);
-}

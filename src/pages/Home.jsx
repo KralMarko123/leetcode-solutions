@@ -3,9 +3,15 @@ import Card from '../components/Card';
 import PageContainer from '../layout/PageContainer';
 import ProblemFilter from '../layout/ProblemFilter';
 import ParagraphHighlight from '../components/ParagraphHighlight';
+import { PROBLEMS } from '../constants/PROBLEMS';
+import { useNavigate } from 'react-router-dom';
 import '../styles/page.css';
+import './Home.css';
+import { ROUTES } from '../constants/ROUTES';
 
 const Home = () => {
+	const navigate = useNavigate();
+
 	return (
 		<div className='page home-page'>
 			<PageContainer>
@@ -18,6 +24,30 @@ const Home = () => {
 						is, what my personal approach was and finally, the <ParagraphHighlight text='code' />.
 					</p>
 				</Card>
+
+				<div className='problem-container'>
+					{PROBLEMS.map((p) => (
+						<div
+							key={p.number}
+							className={`problem-box ${p.difficulty}`}
+							onClick={() =>
+								navigate(ROUTES.DETAILS, {
+									state: {
+										title: p.title,
+										description: p.description,
+										approach: p.approach,
+										codeSnippet: p.codeSnippet,
+										link: p.link,
+										number: p.number
+									}
+								})
+							}
+						>
+							<h3 className=''>{p.title}</h3>
+							<span className='problem-box-number'>{p.number}</span>
+						</div>
+					))}
+				</div>
 			</PageContainer>
 
 			<ProblemFilter />
