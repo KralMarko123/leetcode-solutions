@@ -1,16 +1,14 @@
 .title {
-	color: var(--main-dark);
+	color: var(--main-light);
 	font-size: 3rem;
+}
+
+.title.dark {
+	color: var(--main-dark);
 }
 
 .title.secondary {
 	font-size: 2rem;
-}
-
-.success .title,
-.accent .title,
-.danger .title {
-	color: var(--main-light);
 }
 
 .paragraph {
@@ -26,10 +24,12 @@
 
 .paragraph.code {
 	font-family: var(--secondary-font-family);
-	font-size: 1rem;
-	white-space: pre;
+
+	page-break-inside: avoid;
+	word-wrap: break-word;
 }
 
-.paragraph br {
-	border: solid 50px transparent;
+.csharp-highlight {
+	background-color: transparent !important;
+	color: var(--main-light) !important;
 }

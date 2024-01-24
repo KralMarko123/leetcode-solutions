@@ -47,3 +47,9 @@
 .paragraph.dark .highlight {
 	text-shadow: 2px 2px var(--main-light);
 }
+
+.link-container {
+	text-decoration: none;
+
+	cursor: pointer;
+}

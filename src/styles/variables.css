@@ -3,7 +3,7 @@
 	--main-dark: #222823;
 	--main-light: #e5e7e6;
 	--secondary-dark: #508aa8;
-	--secondary-light: #d87cac;
+	--secondary-light: #b0926a;
 
 	--accent: #7077a1;
 	--success: #4f9d69;
@@ -19,8 +19,8 @@
 		'DejaVu Sans Mono', monospace;
 
 	/**UTILITY**/
-	--simple-radius: 5px;
-	--simple-shadow: 10px 11px 16px -6px rgba(0, 0, 0, 0.25);
+	--simple-radius: 10px;
+	--simple-shadow: 6px 9px 12px -6px rgba(0, 0, 0, 0.25);
 
 	/**LAYOUT**/
 	--page-container-width: 1280px;
