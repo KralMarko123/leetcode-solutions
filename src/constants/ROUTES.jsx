@@ -1,4 +1,5 @@
+export const DETAILS_PREFIX = '/details';
 export const ROUTES = {
 	HOME: '/',
-	DETAILS: '/details'
+	DETAILS: `${DETAILS_PREFIX}/:number`
 };

@@ -24,12 +24,12 @@ const Details = () => {
 				</Card>
 				<h2 className='title dark secondary'>The Problem:</h2>
 				<Card extraClassNames={['accent']}>
-					<p className='paragraph'>{description}</p>
+					<p className='paragraph pre'>{description}</p>
 				</Card>
 
 				<h2 className='title dark secondary'>The Approach:</h2>
 				<Card extraClassNames={['success']}>
-					<p className='paragraph'>{approach}</p>
+					<p className='paragraph pre'>{approach}</p>
 				</Card>
 
 				<h2 className='title dark secondary'>The Code:</h2>

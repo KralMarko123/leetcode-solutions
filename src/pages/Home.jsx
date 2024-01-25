@@ -5,9 +5,9 @@ import ProblemFilter from '../layout/ProblemFilter';
 import ParagraphHighlight from '../components/ParagraphHighlight';
 import { PROBLEMS } from '../constants/PROBLEMS';
 import { useNavigate } from 'react-router-dom';
+import { DETAILS_PREFIX } from '../constants/ROUTES';
 import '../styles/page.css';
 import './Home.css';
-import { ROUTES } from '../constants/ROUTES';
 
 const Home = () => {
 	const navigate = useNavigate();
@@ -31,7 +31,7 @@ const Home = () => {
 							key={p.number}
 							className={`problem-box ${p.difficulty}`}
 							onClick={() =>
-								navigate(ROUTES.DETAILS, {
+								navigate(`.${DETAILS_PREFIX}/${p.number}`, {
 									state: {
 										title: p.title,
 										description: p.description,

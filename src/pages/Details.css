@@ -13,3 +13,7 @@
 .details-page .details-actions .card:focus {
 	filter: brightness(95%);
 }
+
+.details-page .paragraph.pre {
+	white-space: pre-wrap;
+}
