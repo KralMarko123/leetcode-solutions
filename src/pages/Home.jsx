@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState, useEffect } from 'react';
 import Card from '../components/Card';
 import PageContainer from '../layout/PageContainer';
 import ProblemFilter from '../layout/ProblemFilter';
@@ -6,11 +6,21 @@ import ParagraphHighlight from '../components/ParagraphHighlight';
 import { PROBLEMS } from '../constants/PROBLEMS';
 import { useNavigate } from 'react-router-dom';
 import { DETAILS_PREFIX } from '../constants/ROUTES';
+import { EASY } from '../constants/MISC';
 import '../styles/page.css';
 import './Home.css';
 
 const Home = () => {
 	const navigate = useNavigate();
+	const [problems, setProblems] = useState(PROBLEMS);
+
+	const filterProblemsByDifficulty = (difficulty) => {
+		setProblems([...PROBLEMS.filter((p) => p.difficulty === difficulty)]);
+	};
+
+	useEffect(() => {
+		filterProblemsByDifficulty(EASY);
+	}, []);
 
 	return (
 		<div className='page home-page'>
@@ -26,7 +36,7 @@ const Home = () => {
 				</Card>
 
 				<div className='problem-container'>
-					{PROBLEMS.map((p) => (
+					{problems.map((p, i) => (
 						<div
 							key={p.number}
 							className={`problem-box ${p.difficulty}`}
@@ -42,15 +52,16 @@ const Home = () => {
 									}
 								})
 							}
+							style={{ animationDelay: `${i * 0.25}s` }}
 						>
-							<h3 className=''>{p.title}</h3>
-							<span className='problem-box-number'>{p.number}</span>
+							<h3 className='title secondary'>{p.title}</h3>
+							<span className={`problem-box-number ${p.difficulty}`}>{p.number}</span>
 						</div>
 					))}
 				</div>
 			</PageContainer>
 
-			<ProblemFilter />
+			<ProblemFilter handleFilterClick={(difficulty) => filterProblemsByDifficulty(difficulty)} />
 		</div>
 	);
 };

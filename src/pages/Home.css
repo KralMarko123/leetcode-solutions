@@ -12,13 +12,21 @@
 	position: relative;
 	padding: 1em;
 
-	box-shadow: 5px 5px var(--main-dark), 10px 10px var(--secondary-dark);
+	border-radius: var(--simple-radius);
+	box-shadow: 5px 5px, 10px 10px;
 
-	color: var(--main-light);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 	font-size: 1.25rem;
 	text-align: center;
 
 	cursor: pointer;
+	/* animation: enter forwards 1s ease-in-out; */
+
+	/* opacity: 0; */
+	transition: all 0.25s ease-in-out;
 }
 
 .home-page .problem-box .problem-box-number {
@@ -26,7 +34,7 @@
 	bottom: -20%;
 	left: -5%;
 
-	background-color: var(--secondary-light);
+	background-color: var(--secondary-200);
 	padding: 0.25em;
 	font-weight: bold;
 	border-radius: var(--simple-radius);
@@ -37,10 +45,6 @@
 	transform: rotate(15deg);
 }
 
-.home-page .problem-box.easy {
-	background-color: var(--success);
-}
-
 .home-page .problem-box,
 .home-page .problem-box .problem-box-number {
 	transition: all 0.25s ease-in-out;
@@ -48,12 +52,70 @@
 
 .home-page .problem-box:hover,
 .home-page .problem-box:focus {
-	box-shadow: 11px 11px var(--main-dark), 19px 19px var(--secondary-dark);
 	transform: translate(-3px, -3px);
 }
 
 .home-page .problem-box:hover .problem-box-number,
 .home-page .problem-box:focus .problem-box-number {
-  bottom: -25%;
-	transform: rotate(0deg);
+	bottom: -25%;
+	transform: rotate(-5deg) scale(1.25);
+}
+
+/**DIFFICULTY SPECIFIC CSS**/
+
+/**easy*/
+.home-page .problem-box.easy {
+	background-color: var(--success-100);
+	box-shadow: 5px 5px var(--success-200), 10px 10px var(--success-300);
+}
+
+.home-page .problem-box.easy:hover,
+.home-page .problem-box.easy:focus {
+	box-shadow: 14px 14px var(--success-200), 25px 25px var(--success-300);
+}
+
+.home-page .problem-box .problem-box-number.easy {
+	background-color: var(--success-300);
+}
+
+/**medium*/
+.home-page .problem-box.medium {
+	background-color: var(--secondary-100);
+	box-shadow: 5px 5px var(--secondary-200), 10px 10px var(--secondary-300);
+}
+
+.home-page .problem-box.medium:hover,
+.home-page .problem-box.medium:focus {
+	box-shadow: 14px 14px var(--secondary-200), 25px 25px var(--secondary-300);
+}
+
+.home-page .problem-box .problem-box-number.medium {
+	background-color: var(--secondary-300);
+}
+
+/**hard*/
+.home-page .problem-box.hard {
+	background-color: var(--danger-100);
+	box-shadow: 5px 5px var(--danger-200), 10px 10px var(--danger-300);
+}
+
+.home-page .problem-box.hard:hover,
+.home-page .problem-box.hard:focus {
+	box-shadow: 14px 14px var(--danger-200), 25px 25px var(--danger-300);
+}
+
+.home-page .problem-box .problem-box-number.hard {
+	background-color: var(--danger-300);
+}
+
+@keyframes enter {
+	0% {
+		opacity: 0;
+		transform: translate(50%, 0);
+	}
+
+	100% {
+		opacity: 100;
+		transform: translate(0, 0);
+	}
 }

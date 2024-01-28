@@ -23,7 +23,7 @@ const Details = () => {
 					<h1 className='title'>{title}</h1>
 				</Card>
 				<h2 className='title dark secondary'>The Problem:</h2>
-				<Card extraClassNames={['accent']}>
+				<Card extraClassNames={['danger']}>
 					<p className='paragraph pre'>{description}</p>
 				</Card>
 
@@ -34,17 +34,17 @@ const Details = () => {
 
 				<h2 className='title dark secondary'>The Code:</h2>
 
-				<Card extraClassNames={['dark', 'fullwidth']}>
+				<Card extraClassNames={['code', 'fullwidth']}>
 					<Highlight className='csharp-highlight'>{codeSnippet}</Highlight>
 				</Card>
 
 				<div className='details-actions'>
-					<Card extraClassNames={['accent']} callOnClick={() => navigate(ROUTES.HOME)}>
+					<Card callOnClick={() => navigate(ROUTES.HOME)}>
 						<h2 className='title secondary'>Go Back</h2>
 					</Card>
 
 					<LinkContainer isExternal href={link}>
-						<Card extraClassNames={['secondary']}>
+						<Card>
 							<h2 className='title secondary'>Link to Leetcode Problem</h2>
 						</Card>
 					</LinkContainer>

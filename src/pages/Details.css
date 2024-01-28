@@ -1,3 +1,16 @@
+.details-page .card.danger {
+	background-color: var(--danger-100);
+}
+.details-page .card.success {
+	background-color: var(--success-200);
+}
+.details-page .card.secondary {
+	background-color: var(--secondary-300);
+}
+.details-page .card.code {
+	background-color: var(--atom-one-color);
+}
+
 .details-page .details-actions {
 	display: flex;
 	align-items: center;
@@ -9,6 +22,14 @@
 	transition: all 0.25s ease-in-out;
 }
 
+.details-page .details-actions .card {
+	background-color: var(--main-300);
+}
+
+.details-page .details-actions .link-container .card {
+	background-color: var(--secondary-200);
+}
+
 .details-page .details-actions .card:hover,
 .details-page .details-actions .card:focus {
 	filter: brightness(95%);
@@ -16,4 +37,15 @@
 
 .details-page .paragraph.pre {
 	white-space: pre-wrap;
+}
+
+.details-page .csharp-highlight {
+	background-color: transparent !important;
+}
+
+.paragraph.code {
+	font-family: var(--secondary-font-family);
+
+	page-break-inside: avoid;
+	word-wrap: break-word;
 }

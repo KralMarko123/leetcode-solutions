@@ -32,3 +32,28 @@
 	transform: translateX(10%);
 	filter: brightness(90%);
 }
+
+@media (max-width: 1280px) {
+	.problem-filter {
+		position: fixed;
+
+		bottom: 1em;
+		left: 50%;
+		top: unset;
+
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 1em;
+
+		transform: translate(-50%, 0%);
+	}
+}
+
+@media (max-width: 1280px) {
+	.problem-filter {
+		position: fixed;
+
+		gap: 0.5em;
+	}
+}

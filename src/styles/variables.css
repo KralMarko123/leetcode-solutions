@@ -1,16 +1,25 @@
 :root {
 	/**COLORS**/
-	--main-dark: #222823;
-	--main-light: #e5e7e6;
-	--secondary-dark: #508aa8;
-	--secondary-light: #b0926a;
+	--main-100: #fff8e3;
+	--main-200: #faf4b7;
+	--main-300: #ffe9ae;
 
-	--accent: #7077a1;
-	--success: #4f9d69;
-	--danger: #b20d30;
+	--secondary-100: #e5e1da;
+	--secondary-200: #b0a695;
+	--secondary-300: #7a6f61;
 
-	--text-color: var(--main-dark);
-	--heading-color: var(--secondary-dark);
+	--success-100: #e1f0da;
+	--success-200: #d4e7c5;
+	--success-300: #bfd8af;
+	--success-400: #99bc85;
+
+	--danger-100: #ffd1d1;
+	--danger-200: #f29393;
+	--danger-300: #e97777;
+
+	--text-color: #1d1c1a;
+	--background-color: #fbf9f1;
+	--atom-one-color: #282c34;
 
 	/**TEXT**/
 	--base-font-size: 16px;
@@ -24,4 +33,11 @@
 
 	/**LAYOUT**/
 	--page-container-width: 1280px;
+}
+
+@media (max-width: 1280px) {
+	:root {
+		/**LAYOUT**/
+		--page-container-width: 100%;
+	}
 }

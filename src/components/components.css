@@ -2,7 +2,7 @@
 	width: fit-content;
 	padding: 1em;
 
-	background-color: var(--secondary-dark);
+	background-color: var(--main-100);
 	border-radius: var(--simple-radius);
 	box-shadow: var(--simple-shadow);
 }
@@ -12,40 +12,22 @@
 }
 
 .success.card {
-	background-color: var(--success);
-}
-
-.danger.card {
-	background-color: var(--danger);
-}
-
-.accent.card {
-	background-color: var(--accent);
+	background-color: var(--success-400);
 }
 
 .secondary.card {
-	background-color: var(--secondary-light);
+	background-color: var(--secondary-200);
 }
 
-.dark.card {
-	background-color: var(--main-dark);
-}
-
-.flag {
-	text-shadow: 2px 2px var(--main-dark);
-	font-weight: bold;
-	font-size: 1.5rem;
+.danger.card {
+	background-color: var(--danger-300);
 }
 
 .paragraph .highlight {
-	text-shadow: 2px 2px var(--main-dark);
+	text-shadow: 2px 2px var(--secondary-200);
 	font-weight: bold;
 	font-size: 1.5rem;
 	letter-spacing: 1px;
-}
-
-.paragraph.dark .highlight {
-	text-shadow: 2px 2px var(--main-light);
 }
 
 .link-container {
