@@ -1,6 +1,5 @@
 .problem-filter {
 	position: fixed;
-
 	top: 50%;
 
 	display: flex;
@@ -48,12 +47,16 @@
 
 		transform: translate(-50%, 0%);
 	}
+
+	.problem-filter .card:hover,
+	.problem-filter .card:focus {
+		transform: translateY(-10%);
+		filter: brightness(90%);
+	}
 }
 
-@media (max-width: 1280px) {
-	.problem-filter {
-		position: fixed;
-
-		gap: 0.5em;
+@media (max-width: 768px) {
+	.problem-filter .title {
+		font-size: 1.5rem;
 	}
 }

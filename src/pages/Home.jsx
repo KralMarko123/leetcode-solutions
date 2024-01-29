@@ -12,15 +12,42 @@ import './Home.css';
 
 const Home = () => {
 	const navigate = useNavigate();
-	const [problems, setProblems] = useState(PROBLEMS);
+	const [problems, setProblems] = useState([...PROBLEMS]);
+	const [paginatedProblems, setPaginatedProblems] = useState([]);
+	const [difficulty, setDifficulty] = useState(EASY);
+	const [page, setPage] = useState(1);
+	const NUMBER_OF_ITEMS_PER_PAGE = 3;
 
-	const filterProblemsByDifficulty = (difficulty) => {
-		setProblems([...PROBLEMS.filter((p) => p.difficulty === difficulty)]);
+	const handlePageChange = (shouldIncrease) => {
+		const newPageNumber = shouldIncrease ? page + 1 : page - 1;
+
+		if (newPageNumber * NUMBER_OF_ITEMS_PER_PAGE > problems.length || newPageNumber <= 0) return;
+		else setPage(newPageNumber);
+	};
+
+	const filterProblemsByDifficulty = (problems) => [
+		...problems.filter((p) => p.difficulty === difficulty)
+	];
+
+	const filterProblemsByPage = (problems) => {
+		const end = page * NUMBER_OF_ITEMS_PER_PAGE;
+		const start = end - NUMBER_OF_ITEMS_PER_PAGE;
+
+		return [...problems.filter((p, i) => i < end && i >= start)];
 	};
 
 	useEffect(() => {
-		filterProblemsByDifficulty(EASY);
-	}, []);
+		const problemsByDifficulty = filterProblemsByDifficulty(PROBLEMS);
+		const startPageProblems = filterProblemsByPage(problemsByDifficulty);
+
+		setPaginatedProblems(startPageProblems);
+	}, [difficulty]);
+
+	useEffect(() => {
+		const problemsByPage = filterProblemsByPage(paginatedProblems);
+
+		setPaginatedProblems(problemsByPage);
+	}, [page]);
 
 	return (
 		<div className='page home-page'>
@@ -36,7 +63,7 @@ const Home = () => {
 				</Card>
 
 				<div className='problem-container'>
-					{problems.map((p, i) => (
+					{paginatedProblems.map((p, i) => (
 						<div
 							key={p.number}
 							className={`problem-box ${p.difficulty}`}
@@ -59,9 +86,18 @@ const Home = () => {
 						</div>
 					))}
 				</div>
+
+				<div className='problem-pagination'>
+					<div className='arrow arrow-left' onClick={() => handlePageChange(false)}>
+						&lt;
+					</div>
+					<div className='arrow arrow-right' onClick={() => handlePageChange(true)}>
+						&gt;
+					</div>
+				</div>
 			</PageContainer>
 
-			<ProblemFilter handleFilterClick={(difficulty) => filterProblemsByDifficulty(difficulty)} />
+			<ProblemFilter handleFilterClick={(difficulty) => setDifficulty(difficulty)} />
 		</div>
 	);
 };
