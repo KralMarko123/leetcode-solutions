@@ -1,5 +1,5 @@
 .problem-filter {
-	position: fixed;
+	position: absolute;
 	top: 50%;
 
 	display: flex;
@@ -10,10 +10,12 @@
 }
 
 .page-container {
-	align-self: center;
+	height: 100%;
 	width: 100%;
 	max-width: var(--page-container-width);
+	
 
+	align-self: center;
 	display: flex;
 	flex-direction: column;
 	gap: 1em;

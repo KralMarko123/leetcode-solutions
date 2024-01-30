@@ -6,7 +6,7 @@ import ParagraphHighlight from '../components/ParagraphHighlight';
 import { PROBLEMS } from '../constants/PROBLEMS';
 import { useNavigate } from 'react-router-dom';
 import { DETAILS_PREFIX } from '../constants/ROUTES';
-import { EASY } from '../constants/MISC';
+import { EASY, MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE } from '../constants/MISC';
 import '../styles/page.css';
 import './Home.css';
 
@@ -16,12 +16,12 @@ const Home = () => {
 	const [paginatedProblems, setPaginatedProblems] = useState([]);
 	const [difficulty, setDifficulty] = useState(EASY);
 	const [page, setPage] = useState(1);
-	const NUMBER_OF_ITEMS_PER_PAGE = 3;
 
 	const handlePageChange = (shouldIncrease) => {
 		const newPageNumber = shouldIncrease ? page + 1 : page - 1;
 
-		if (newPageNumber * NUMBER_OF_ITEMS_PER_PAGE > problems.length || newPageNumber <= 0) return;
+		if (newPageNumber * MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE > problems.length || newPageNumber < 1)
+			return;
 		else setPage(newPageNumber);
 	};
 
@@ -30,24 +30,26 @@ const Home = () => {
 	];
 
 	const filterProblemsByPage = (problems) => {
-		const end = page * NUMBER_OF_ITEMS_PER_PAGE;
-		const start = end - NUMBER_OF_ITEMS_PER_PAGE;
+		const end = page * MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE;
+		const start = end - MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE;
 
 		return [...problems.filter((p, i) => i < end && i >= start)];
 	};
 
 	useEffect(() => {
-		const problemsByDifficulty = filterProblemsByDifficulty(PROBLEMS);
-		const startPageProblems = filterProblemsByPage(problemsByDifficulty);
-
-		setPaginatedProblems(startPageProblems);
-	}, [difficulty]);
-
-	useEffect(() => {
-		const problemsByPage = filterProblemsByPage(paginatedProblems);
-
+		const problemsByPage = filterProblemsByPage(problems);
 		setPaginatedProblems(problemsByPage);
 	}, [page]);
+
+	useEffect(() => {
+		setPage(1);
+
+		const problemsByDifficulty = filterProblemsByDifficulty(PROBLEMS);
+		setProblems(problemsByDifficulty);
+
+		const problemsByPage = filterProblemsByPage(problemsByDifficulty);
+		setPaginatedProblems(problemsByPage);
+	}, [difficulty]);
 
 	return (
 		<div className='page home-page'>
@@ -88,10 +90,18 @@ const Home = () => {
 				</div>
 
 				<div className='problem-pagination'>
-					<div className='arrow arrow-left' onClick={() => handlePageChange(false)}>
+					<div
+						className={`arrow arrow-left${page <= 1 ? ' disabled' : ''}`}
+						onClick={() => handlePageChange(false)}
+					>
 						&lt;
 					</div>
-					<div className='arrow arrow-right' onClick={() => handlePageChange(true)}>
+					<div
+						className={`arrow arrow-right${
+							page * MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE >= problems.length ? ' disabled' : ''
+						}`}
+						onClick={() => handlePageChange(true)}
+					>
 						&gt;
 					</div>
 				</div>
