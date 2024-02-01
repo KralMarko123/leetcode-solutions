@@ -14,8 +14,6 @@ const Details = () => {
 	const location = useLocation();
 	const { title, description, approach, codeSnippet, link } = location.state;
 
-	console.log(location.state.description);
-
 	return (
 		<div className='page details-page'>
 			<PageContainer>
@@ -23,12 +21,12 @@ const Details = () => {
 					<h1 className='title'>{title}</h1>
 				</Card>
 				<h2 className='title dark secondary'>The Problem:</h2>
-				<Card extraClassNames={['danger']}>
+				<Card extraClassNames={['danger', 'fullwidth']}>
 					<p className='paragraph pre'>{description}</p>
 				</Card>
 
 				<h2 className='title dark secondary'>The Approach:</h2>
-				<Card extraClassNames={['success']}>
+				<Card extraClassNames={['success', 'fullwidth']}>
 					<p className='paragraph pre'>{approach}</p>
 				</Card>
 

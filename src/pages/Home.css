@@ -62,12 +62,16 @@
 /**easy*/
 .home-page .problem-box.easy {
 	background-color: var(--success-100);
-	box-shadow: 5px 5px var(--success-200), 10px 10px var(--success-300);
+	box-shadow:
+		5px 5px var(--success-200),
+		10px 10px var(--success-300);
 }
 
 .home-page .problem-box.easy:hover,
 .home-page .problem-box.easy:focus {
-	box-shadow: 14px 14px var(--success-200), 25px 25px var(--success-300);
+	box-shadow:
+		14px 14px var(--success-200),
+		25px 25px var(--success-300);
 }
 
 .home-page .problem-box .problem-box-number.easy {
@@ -77,12 +81,16 @@
 /**medium*/
 .home-page .problem-box.medium {
 	background-color: var(--secondary-100);
-	box-shadow: 5px 5px var(--secondary-200), 10px 10px var(--secondary-300);
+	box-shadow:
+		5px 5px var(--secondary-200),
+		10px 10px var(--secondary-300);
 }
 
 .home-page .problem-box.medium:hover,
 .home-page .problem-box.medium:focus {
-	box-shadow: 14px 14px var(--secondary-200), 25px 25px var(--secondary-300);
+	box-shadow:
+		14px 14px var(--secondary-200),
+		25px 25px var(--secondary-300);
 }
 
 .home-page .problem-box .problem-box-number.medium {
@@ -92,12 +100,16 @@
 /**hard*/
 .home-page .problem-box.hard {
 	background-color: var(--danger-100);
-	box-shadow: 5px 5px var(--danger-200), 10px 10px var(--danger-300);
+	box-shadow:
+		5px 5px var(--danger-200),
+		10px 10px var(--danger-300);
 }
 
 .home-page .problem-box.hard:hover,
 .home-page .problem-box.hard:focus {
-	box-shadow: 14px 14px var(--danger-200), 25px 25px var(--danger-300);
+	box-shadow:
+		14px 14px var(--danger-200),
+		25px 25px var(--danger-300);
 }
 
 .home-page .problem-box .problem-box-number.hard {
@@ -163,25 +175,31 @@
 	/**easy*/
 	.home-page .problem-box.easy:hover,
 	.home-page .problem-box.easy:focus {
-		box-shadow: 11px 11px var(--success-200), 20px 20px var(--success-300);
+		box-shadow:
+			11px 11px var(--success-200),
+			20px 20px var(--success-300);
 	}
 
 	/**medium*/
 
 	.home-page .problem-box.medium:hover,
 	.home-page .problem-box.medium:focus {
-		box-shadow: 11px 11px var(--secondary-200), 20px 20px var(--secondary-300);
+		box-shadow:
+			11px 11px var(--secondary-200),
+			20px 20px var(--secondary-300);
 	}
 
 	/**hard*/
 
 	.home-page .problem-box.hard:hover,
 	.home-page .problem-box.hard:focus {
-		box-shadow: 11px 11px var(--danger-200), 20px 20px var(--danger-300);
+		box-shadow:
+			11px 11px var(--danger-200),
+			20px 20px var(--danger-300);
 	}
 
 	.home-page .problem-pagination {
-		bottom: -50%;
+		margin-top: 2em;
 	}
 
 	.home-page .problem-pagination .arrow {
@@ -219,20 +237,30 @@
 	/**easy*/
 	.home-page .problem-box.easy:hover,
 	.home-page .problem-box.easy:focus {
-		box-shadow: 9px 9px var(--success-200), 16px 16px var(--success-300);
+		box-shadow:
+			9px 9px var(--success-200),
+			16px 16px var(--success-300);
 	}
 
 	/**medium*/
 
 	.home-page .problem-box.medium:hover,
 	.home-page .problem-box.medium:focus {
-		box-shadow: 9px 9px var(--secondary-200), 16px 16px var(--secondary-300);
+		box-shadow:
+			9px 9px var(--secondary-200),
+			16px 16px var(--secondary-300);
 	}
 
 	/**hard*/
 
 	.home-page .problem-box.hard:hover,
 	.home-page .problem-box.hard:focus {
-		box-shadow: 9px 9px var(--danger-200), 16px 16px var(--danger-300);
+		box-shadow:
+			9px 9px var(--danger-200),
+			16px 16px var(--danger-300);
+	}
+
+	.home-page .problem-pagination {
+		margin-top: 1em;
 	}
 }

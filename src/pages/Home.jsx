@@ -6,7 +6,8 @@ import ParagraphHighlight from '../components/ParagraphHighlight';
 import { PROBLEMS } from '../constants/PROBLEMS';
 import { useNavigate } from 'react-router-dom';
 import { DETAILS_PREFIX } from '../constants/ROUTES';
-import { EASY, MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE } from '../constants/MISC';
+import { EASY } from '../constants/MISC';
+import { useMobileCheck } from '../custom/useMobileCheck';
 import '../styles/page.css';
 import './Home.css';
 
@@ -16,13 +17,18 @@ const Home = () => {
 	const [paginatedProblems, setPaginatedProblems] = useState([]);
 	const [difficulty, setDifficulty] = useState(EASY);
 	const [page, setPage] = useState(1);
+	const { MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE } = useMobileCheck();
 
-	const handlePageChange = (shouldIncrease) => {
-		const newPageNumber = shouldIncrease ? page + 1 : page - 1;
+	const handlePageDecrease = () => {
+		if (page <= 1) return;
 
-		if (newPageNumber * MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE > problems.length || newPageNumber < 1)
-			return;
-		else setPage(newPageNumber);
+		setPage((prev) => prev - 1);
+	};
+
+	const handlePageIncrease = () => {
+		if (page * MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE >= problems.length) return;
+
+		setPage((prev) => prev + 1);
 	};
 
 	const filterProblemsByDifficulty = (problems) => [
@@ -49,7 +55,7 @@ const Home = () => {
 
 		const problemsByPage = filterProblemsByPage(problemsByDifficulty);
 		setPaginatedProblems(problemsByPage);
-	}, [difficulty]);
+	}, [difficulty, MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE]);
 
 	return (
 		<div className='page home-page'>
@@ -92,7 +98,7 @@ const Home = () => {
 				<div className='problem-pagination'>
 					<div
 						className={`arrow arrow-left${page <= 1 ? ' disabled' : ''}`}
-						onClick={() => handlePageChange(false)}
+						onClick={() => handlePageDecrease()}
 					>
 						&lt;
 					</div>
@@ -100,7 +106,7 @@ const Home = () => {
 						className={`arrow arrow-right${
 							page * MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE >= problems.length ? ' disabled' : ''
 						}`}
-						onClick={() => handlePageChange(true)}
+						onClick={() => handlePageIncrease()}
 					>
 						&gt;
 					</div>
