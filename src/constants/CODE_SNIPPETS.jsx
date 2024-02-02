@@ -113,7 +113,7 @@ export const MIN_STACK_SNIPPET = `public class MinStack {
   }
 }`;
 
-export const CAN_PLACE_FLOWERS_SNIPPET = `public static bool CanPlaceNumberOfFlowers(int[] flowerbed, int n) {
+export const CAN_PLACE_FLOWERS_SNIPPET = `public bool CanPlaceNumberOfFlowers(int[] flowerbed, int n) {
   for (int i = 0; i < flowerbed.Length; i++) {
     if (flowerbed[i] == 0 && (i == 0 || flowerbed[i - 1] == 0) &&
       (i == flowerbed.Length - 1 || flowerbed[i + 1] == 0)) {
@@ -123,4 +123,31 @@ export const CAN_PLACE_FLOWERS_SNIPPET = `public static bool CanPlaceNumberOfFlo
   }
 
   return n <= 0;
-}`
+}`;
+
+export const CONTAINS_DUPLICATE_SNIPPET = `public bool ContainsDuplicate(int[] nums) {
+  var dictionary = new Dictionary < int,
+    bool > ();
+
+  foreach(var num in nums) {
+    if (dictionary.ContainsKey(num)) return true;
+    else dictionary.Add(num, true);
+  }
+
+  return false;
+}
+
+public bool ContainsDuplicateWithHashSet(int[] nums) {
+  return new HashSet < int > (nums).Count != nums.Length;
+}`;
+
+export const CONTAINS_DUPLICATE_TWO_SNIPPET = `public bool ContainsNearbyDuplicate(int[] nums, int k) {
+  var dict = new Dictionary < int, int > ();
+
+  for (int i = 0; i < nums.Length; i++) {
+    if (dict.ContainsKey(nums[i]) && (i - dict[nums[i]]) <= k) return true;
+    else dict[nums[i]] = i;
+  }
+
+  return false;
+}`;

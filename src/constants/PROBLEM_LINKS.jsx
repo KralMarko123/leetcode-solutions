@@ -7,3 +7,5 @@ export const LONGEST_CONSECUTIVE_SEQUENCE_LINK =
 	'https://leetcode.com/problems/longest-consecutive-sequence';
 export const MIN_STACK_LINK = 'https://leetcode.com/problems/min-stack/';
 export const CAN_PLACE_FLOWERS_LINK = 'https://leetcode.com/problems/can-place-flowers/';
+export const CONTAINS_DUPLICATE_LINK = 'https://leetcode.com/problems/contains-duplicate/';
+export const CONTAINS_DUPLICATE_TWO_LINK = 'https://leetcode.com/problems/contains-duplicate-ii';

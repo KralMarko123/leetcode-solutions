@@ -9,3 +9,7 @@ export const LONGEST_CONSECUTIVE_SEQUENCE_DESCRIPTION = `Given an unsorted array
 export const MIN_STACK_DESCRIPTION = `Design a stack that supports push, pop, top, and retrieving the minimum element in constant time. Implement the MinStack class:\n\nMinStack() initializes the stack object.\nvoid push(int val) pushes the element val onto the stack.\nvoid pop() removes the element on the top of the stack.\nint top() gets the top element of the stack.\nint getMin() retrieves the minimum element in the stack.\n\nYou must implement a solution with O(1) time complexity for each function.`;
 
 export const CAN_PLACE_FLOWERS_DESCRIPTION = `You have a long flowerbed in which some of the plots are planted, and some are not. However, flowers cannot be planted in adjacent plots. Given an integer array flowerbed containing 0's and 1's, where 0 means empty and 1 means not empty, and an integer n, return true if n new flowers can be planted in the flowerbed without violating the no-adjacent-flowers rule and false otherwise.`;
+
+export const CONTAINS_DUPLICATE_DESCRIPTION = `Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.`;
+
+export const CONTAINS_DUPLICATE_TWO_DESCRIPTION = `Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.`;
