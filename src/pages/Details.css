@@ -43,9 +43,19 @@
 	background-color: transparent !important;
 }
 
-.paragraph.code {
+.details-page .paragraph.code {
 	font-family: var(--secondary-font-family);
 
 	page-break-inside: avoid;
 	word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+	.details-page .csharp-highlight {
+		font-size: 0.85rem;
+	}
+
+	.details-page .details-actions .title {
+		text-align: center;
+	}
 }

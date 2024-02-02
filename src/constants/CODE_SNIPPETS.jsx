@@ -112,3 +112,15 @@ export const MIN_STACK_SNIPPET = `public class MinStack {
     return MinimalElements.Last();
   }
 }`;
+
+export const CAN_PLACE_FLOWERS_SNIPPET = `public static bool CanPlaceNumberOfFlowers(int[] flowerbed, int n) {
+  for (int i = 0; i < flowerbed.Length; i++) {
+    if (flowerbed[i] == 0 && (i == 0 || flowerbed[i - 1] == 0) &&
+      (i == flowerbed.Length - 1 || flowerbed[i + 1] == 0)) {
+      flowerbed[i] = 1;
+      n--;
+    }
+  }
+
+  return n <= 0;
+}`
