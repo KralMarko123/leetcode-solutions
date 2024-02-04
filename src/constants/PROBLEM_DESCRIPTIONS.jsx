@@ -13,3 +13,5 @@ export const CAN_PLACE_FLOWERS_DESCRIPTION = `You have a long flowerbed in which
 export const CONTAINS_DUPLICATE_DESCRIPTION = `Given an integer array nums, return true if any value appears at least twice in the array, and return false if every element is distinct.`;
 
 export const CONTAINS_DUPLICATE_TWO_DESCRIPTION = `Given an integer array nums and an integer k, return true if there are two distinct indices i and j in the array such that nums[i] == nums[j] and abs(i - j) <= k.`;
+
+export const EXCEL_SHEET_COLUMN_NUMBER_DESCRIPTION = `Given a string columnTitle that represents the column title as appears in an Excel sheet, return its corresponding column number.`

@@ -8,7 +8,7 @@ export const useMobileCheck = () => {
 
 	if (!isTablet && !isMobile) MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE = 8;
 	else if (isTablet && !isMobile) MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE = 6;
-	else MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE = 2;
+	else MAXIMUM_NUMBER_OF_ITEMS_PER_PAGE = 4;
 
 	const handleWindowSizeChange = () => {
 		setBrowserWidth(window.innerWidth);

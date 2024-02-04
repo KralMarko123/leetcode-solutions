@@ -9,3 +9,5 @@ export const MIN_STACK_LINK = 'https://leetcode.com/problems/min-stack/';
 export const CAN_PLACE_FLOWERS_LINK = 'https://leetcode.com/problems/can-place-flowers/';
 export const CONTAINS_DUPLICATE_LINK = 'https://leetcode.com/problems/contains-duplicate/';
 export const CONTAINS_DUPLICATE_TWO_LINK = 'https://leetcode.com/problems/contains-duplicate-ii';
+export const EXCEL_SHEET_COLUMN_NUMBER_LINK =
+	'https://leetcode.com/problems/excel-sheet-column-number';
