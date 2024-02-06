@@ -1,4 +1,4 @@
-export const BEST_TIME_TO_BUY_AND_SELL_STOCK_SNIPPET = `public int MaxProfit(int[] prices) {
+export const BEST_TIME_TO_BUY_AND_SELL_STOCK_SNIPPET = `public static int MaxProfit(int[] prices) {
   if (prices.Length == 1) return 0;
 
   var maxProfit = 0;
@@ -16,13 +16,12 @@ export const BEST_TIME_TO_BUY_AND_SELL_STOCK_SNIPPET = `public int MaxProfit(int
 
   return maxProfit;
 }`;
-
-export const BINARY_SEARCH_SNIPPET = `public int Search(int[] nums, int target) {
+export const BINARY_SEARCH_SNIPPET = `public static int Search(int[] nums, int target) {
   var result = Array.BinarySearch(nums, target);
   return result < 0 ? 0 : result;
 }
 
-public int SearchUsingOwnBinarySearch(int[] nums, int target) {
+public static int SearchUsingOwnBinarySearch(int[] nums, int target) {
   var start = 0;
   var end = nums.Length - 1;
 
@@ -37,8 +36,7 @@ public int SearchUsingOwnBinarySearch(int[] nums, int target) {
 
   return -1;
 }`;
-
-export const ARITHMETIC_PROGRESSION_SNIPPET = `public bool CanMakeArithmeticProgression(int[] arr) {
+export const ARITHMETIC_PROGRESSION_SNIPPET = `public static bool CanMakeArithmeticProgression(int[] arr) {
   // Step 1: Find min, max, and difference
   var minElement = arr.Min();
   var maxElement = arr.Max();
@@ -61,8 +59,7 @@ export const ARITHMETIC_PROGRESSION_SNIPPET = `public bool CanMakeArithmeticProg
 
   return true;
 }`;
-
-export const LONGEST_CONSECUTIVE_SEQUENCE_SNIPPET = `public int LongestConsecutive(int[] nums) {
+export const LONGEST_CONSECUTIVE_SEQUENCE_SNIPPET = `public static int LongestConsecutive(int[] nums) {
   if (nums.Length <= 1) return nums.Length;
 
   // hashset lookup is O(1)
@@ -82,8 +79,7 @@ export const LONGEST_CONSECUTIVE_SEQUENCE_SNIPPET = `public int LongestConsecuti
 
   return maxSequence;
 }`;
-
-export const MIN_STACK_SNIPPET = `public class MinStack {
+export const MIN_STACK_SNIPPET = `public static class MinStack {
   private List < int > Elements;
   private List < int > MinimalElements;
 
@@ -112,8 +108,7 @@ export const MIN_STACK_SNIPPET = `public class MinStack {
     return MinimalElements.Last();
   }
 }`;
-
-export const CAN_PLACE_FLOWERS_SNIPPET = `public bool CanPlaceNumberOfFlowers(int[] flowerbed, int n) {
+export const CAN_PLACE_FLOWERS_SNIPPET = `public static bool CanPlaceNumberOfFlowers(int[] flowerbed, int n) {
   for (int i = 0; i < flowerbed.Length; i++) {
     if (flowerbed[i] == 0 && (i == 0 || flowerbed[i - 1] == 0) &&
       (i == flowerbed.Length - 1 || flowerbed[i + 1] == 0)) {
@@ -124,8 +119,7 @@ export const CAN_PLACE_FLOWERS_SNIPPET = `public bool CanPlaceNumberOfFlowers(in
 
   return n <= 0;
 }`;
-
-export const CONTAINS_DUPLICATE_SNIPPET = `public bool ContainsDuplicate(int[] nums) {
+export const CONTAINS_DUPLICATE_SNIPPET = `public static bool ContainsDuplicate(int[] nums) {
   var dictionary = new Dictionary < int,
     bool > ();
 
@@ -137,11 +131,10 @@ export const CONTAINS_DUPLICATE_SNIPPET = `public bool ContainsDuplicate(int[] n
   return false;
 }
 
-public bool ContainsDuplicateWithHashSet(int[] nums) {
+public static bool ContainsDuplicateWithHashSet(int[] nums) {
   return new HashSet < int > (nums).Count != nums.Length;
 }`;
-
-export const CONTAINS_DUPLICATE_TWO_SNIPPET = `public bool ContainsNearbyDuplicate(int[] nums, int k) {
+export const CONTAINS_DUPLICATE_TWO_SNIPPET = `public static bool ContainsNearbyDuplicate(int[] nums, int k) {
   var dict = new Dictionary < int, int > ();
 
   for (int i = 0; i < nums.Length; i++) {
@@ -151,8 +144,7 @@ export const CONTAINS_DUPLICATE_TWO_SNIPPET = `public bool ContainsNearbyDuplica
 
   return false;
 }`;
-
-export const EXCEL_SHEET_COLUMN_NUMBER_SNIPPET = `public int TitleToNumber(string columnTitle) {
+export const EXCEL_SHEET_COLUMN_NUMBER_SNIPPET = `public static int TitleToNumber(string columnTitle) {
   int result = 0;
   var dictionary = new Dictionary<char, int>()
     {
@@ -189,4 +181,27 @@ export const EXCEL_SHEET_COLUMN_NUMBER_SNIPPET = `public int TitleToNumber(strin
   }
 
   return result;
+}`;
+export const FIND_NUMBERS_WITH_EVEN_NUMBER_OF_DIGITS_SNIPPET = `public static int FindNumbersOneLiner(int[] nums) {
+  return nums.Count(n => n.ToString().Length % 2 == 0);
+}`;
+export const FIND_INDEX_OF_FIRST_OCCURRENCE_IN_A_STRING_SNIPPET = `public static int FindIndexOfFirstOccurence(string haystack, string needle) {
+  if (needle.Length > haystack.Length) return -1;
+
+  for (int i = 0; i < haystack.Length; i++) {
+    if (haystack.Length - i < needle.Length) return -1;
+
+    if (haystack[i] == needle[0]) {
+      var lettersPassed = 0;
+
+      for (int j = i; lettersPassed < needle.Length; j++) {
+        if (haystack[j] == needle[lettersPassed]) lettersPassed++;
+        else break;
+      }
+
+      if (lettersPassed == needle.Length) return i;
+    }
+  }
+
+  return -1;
 }`;

@@ -13,6 +13,7 @@
 	position: relative;
 	padding: 1em;
 
+	min-height: 250px;
 	border-radius: var(--simple-radius);
 
 	display: flex;
@@ -27,7 +28,7 @@
 
 .home-page .problem-box .problem-box-number {
 	position: absolute;
-	bottom: -20%;
+	bottom: -10%;
 	left: -5%;
 
 	background-color: var(--secondary-200);
@@ -53,7 +54,7 @@
 
 .home-page .problem-box:hover .problem-box-number,
 .home-page .problem-box:focus .problem-box-number {
-	bottom: -25%;
+	bottom: -15%;
 	transform: rotate(-5deg) scale(1.25);
 }
 
@@ -144,17 +145,18 @@
 @media (max-width: 1280px) {
 	.home-page .problem-container {
 		grid-template-columns: 1fr 1fr 1fr;
+		gap: 2em;
 	}
 
 	.home-page .problem-box {
-		padding: 1em 0.25em;
+		min-height: 300px;
 	}
 
 	.home-page .problem-box .problem-box-number {
-		bottom: -10%;
+		bottom: -5%;
 		left: -2%;
 
-		font-size: 1.25rem;
+		font-size: 1.5rem;
 
 		transform: rotate(10deg);
 	}
@@ -166,7 +168,7 @@
 
 	.home-page .problem-box:hover .problem-box-number,
 	.home-page .problem-box:focus .problem-box-number {
-		bottom: -20%;
+		bottom: -10%;
 		transform: rotate(0deg) scale(1.1);
 	}
 
@@ -215,18 +217,24 @@
 	}
 }
 
+@media (max-width: 1280px) and (orientation: landscape) {
+	.home-page .problem-box {
+		min-height: 200px;
+	}
+}
+
 @media (max-width: 768px) {
 	.home-page .problem-container {
 		grid-template-columns: 1fr 1fr;
-		gap: 2em;
+		gap: 1.5em;
 	}
 
 	.home-page .problem-box {
-		padding: 1em 0.25em;
+		min-height: 120px;
 	}
 
 	.home-page .problem-box .problem-box-number {
-		bottom: -15%;
+		bottom: -10%;
 		left: -2%;
 
 		font-size: 1rem;

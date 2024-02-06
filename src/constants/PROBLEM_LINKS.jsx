@@ -11,3 +11,7 @@ export const CONTAINS_DUPLICATE_LINK = 'https://leetcode.com/problems/contains-d
 export const CONTAINS_DUPLICATE_TWO_LINK = 'https://leetcode.com/problems/contains-duplicate-ii';
 export const EXCEL_SHEET_COLUMN_NUMBER_LINK =
 	'https://leetcode.com/problems/excel-sheet-column-number';
+export const FIND_NUMBERS_WITH_EVEN_NUMBER_OF_DIGITS_LINK =
+	'https://leetcode.com/problems/find-numbers-with-even-number-of-digits';
+export const FIND_INDEX_OF_FIRST_OCCURRENCE_IN_A_STRING_LINK =
+	'https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string';
