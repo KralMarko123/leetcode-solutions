@@ -205,3 +205,105 @@ export const FIND_INDEX_OF_FIRST_OCCURRENCE_IN_A_STRING_SNIPPET = `public static
 
   return -1;
 }`;
+export const FIRST_UNIQUE_CHARACTER_IN_A_STRING_SNIPPET = `public static int FirstUniqChar(string s) {
+  var dict = new Dictionary < char, int > ();
+
+  foreach(var character in s) {
+    if (!dict.ContainsKey(character)) dict[character] = 1;
+    else dict[character]++;
+  }
+
+  for (int i = 0; i < s.Length; i++) {
+    if (dict[s[i]] == 1) return i;
+  }
+
+  return -1;
+}`;
+export const FIZZ_BUZZ_SNIPPET = `public static IList < string > FizzBuzz(int n) {
+  var result = new List < string > ();
+
+  foreach(var digit in Enumerable.Range(1, n)) {
+    var text = "";
+
+    if (digit % 3 != 0 && digit % 5 != 0) text += digit.ToString();
+    if (digit % 3 == 0) text += "Fizz";
+    if (digit % 5 == 0) text += "Buzz";
+
+    result.Add(text);
+  }
+
+  return result;
+}`;
+export const HAPPY_NUMBER_SNIPPET = `public static bool IsHappy(int n) {
+  if (n == 1) return true;
+
+  var set = new HashSet < int > ();
+
+  while (true) {
+    n = GetSumOfSquaredDigitsInNumber(n);
+
+    if (n == 1) return true;
+    else if (set.Contains(n)) return false;
+
+    set.Add(n);
+  }
+}
+
+private static int GetSumOfSquaredDigitsInNumber(int n) {
+  var sum = 0;
+
+  while (n != 0) {
+    sum += (int) Math.Pow(n % 10, 2);
+    n /= 10;
+  }
+
+  return sum;
+}`;
+export const INTERSECTION_OF_TWO_ARRAYS_SNIPPET = `public static int[] Intersect(int[] nums1, int[] nums2) {
+  var setOne = new HashSet < int > (nums1);
+  var setTwo = new HashSet < int > (nums2);
+  var result = new List < int > ();
+
+  foreach(var num in setTwo) {
+    if (setOne.Contains(num)) result.Add(num);
+  }
+
+  return result.ToArray();
+}`;
+export const REVER_INTEGER_SNIPPET = `public static int ReverseUsingQueue(int x) {
+  if (x / 10 == 0) return x;
+
+  while (x % 10 == 0) x /= 10;
+
+  var queue = new Queue < int > ();
+  bool isNegative = x < 0;
+  int reversedInt = 0;
+
+  while (x != 0) {
+    queue.Enqueue(Math.Abs(x % 10));
+    x /= 10;
+  }
+
+  if (!int.TryParse(string.Join("", queue), out int value)) return 0;
+
+  while (queue.Count > 0) reversedInt = reversedInt * 10 + queue.Dequeue();
+
+  return isNegative ? reversedInt * -1 : reversedInt;
+}`;
+export const MEDIAN_OF_TWO_SORTED_ARRAYS_SNIPPET = `public static double FindMedianSortedArrays(int[] nums1, int[] nums2) {
+  int i = 0, j = 0, k = 0;
+  int[] mergedArray = new int[nums1.Length + nums2.Length];
+
+  while (i < nums1.Length && j < nums2.Length) {
+    if (nums1[i] < nums2[j]) mergedArray[k++] = nums1[i++];
+    else mergedArray[k++] = nums2[j++];
+  }
+  while (i < nums1.Length) mergedArray[k++] = nums1[i++];
+  while (j < nums2.Length) mergedArray[k++] = nums2[j++];
+
+  int length = mergedArray.Length - 1;
+
+  return mergedArray.Length % 2 == 0 
+  ? (double)(mergedArray[length / 2] + mergedArray[(length / 2) + 1]) / 2 
+  : mergedArray[length / 2];
+}`;

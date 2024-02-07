@@ -29,7 +29,7 @@
 .home-page .problem-box .problem-box-number {
 	position: absolute;
 	bottom: -10%;
-	left: -5%;
+	left: 0%;
 
 	background-color: var(--secondary-200);
 	padding: 0.25em;
@@ -154,7 +154,6 @@
 
 	.home-page .problem-box .problem-box-number {
 		bottom: -5%;
-		left: -2%;
 
 		font-size: 1.5rem;
 
@@ -169,7 +168,7 @@
 	.home-page .problem-box:hover .problem-box-number,
 	.home-page .problem-box:focus .problem-box-number {
 		bottom: -10%;
-		transform: rotate(0deg) scale(1.1);
+		transform: rotate(-5deg) scale(1.1);
 	}
 
 	/**DIFFICULTY SPECIFIC CSS**/
@@ -235,7 +234,6 @@
 
 	.home-page .problem-box .problem-box-number {
 		bottom: -10%;
-		left: -2%;
 
 		font-size: 1rem;
 	}

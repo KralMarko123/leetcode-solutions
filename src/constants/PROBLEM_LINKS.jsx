@@ -15,3 +15,12 @@ export const FIND_NUMBERS_WITH_EVEN_NUMBER_OF_DIGITS_LINK =
 	'https://leetcode.com/problems/find-numbers-with-even-number-of-digits';
 export const FIND_INDEX_OF_FIRST_OCCURRENCE_IN_A_STRING_LINK =
 	'https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string';
+export const FIRST_UNIQUE_CHARACTER_IN_A_STRING_LINK =
+	'https://leetcode.com/problems/first-unique-character-in-a-string';
+export const FIZZ_BUZZ_LINK = 'https://leetcode.com/problems/fizz-buzz';
+export const HAPPY_NUMBER_LINK = 'https://leetcode.com/problems/happy-number/';
+export const INTERSECTION_OF_TWO_ARRAYS_LINK =
+	'https://leetcode.com/problems/intersection-of-two-arrays';
+export const REVERSE_INTEGER_LINK = 'https://leetcode.com/problems/reverse-integer';
+export const MEDIAN_OF_TWO_SORTED_ARRAYS_LINK =
+	'https://leetcode.com/problems/median-of-two-sorted-arrays';
