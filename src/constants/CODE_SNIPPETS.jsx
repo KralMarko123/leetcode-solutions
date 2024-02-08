@@ -307,3 +307,70 @@ export const MEDIAN_OF_TWO_SORTED_ARRAYS_SNIPPET = `public static double FindMed
   ? (double)(mergedArray[length / 2] + mergedArray[(length / 2) + 1]) / 2 
   : mergedArray[length / 2];
 }`;
+export const ZIGZAG_CONVERSION_SNIPPET = `public static string Convert(string s, int numRows) {
+  var dict = new Dictionary < int, string > ();
+  bool flag = false;
+
+  for (int i = 0, j = 0; i < s.Length; i++) {
+    if (!dict.ContainsKey(j)) dict.Add(j, s[i].ToString());
+    else dict[j] += s[i].ToString();
+
+    if (j == numRows - 1) flag = true;
+    if (j == 0) flag = false;
+
+    j = flag ? j - 1 : j + 1;
+  }
+
+  return string.Join("", dict.Values);
+}`;
+export const TWO_SUM_SNIPPET = `public static int[] FindTwoSum(int[] nums, int target) {
+  var dictionary = new Dictionary < int, int > ();
+
+  for (int i = 0; i < nums.Length; i++) {
+    if (dictionary.ContainsKey(target - nums[i]))
+      return new int[] {
+        dictionary[target - nums[i]], i
+      };
+
+    if (!dictionary.ContainsKey(nums[i]))
+      dictionary.Add(nums[i], i);
+  }
+
+  return null;
+}`;
+export const THREE_SUM_SNIPPET = `public static IList < IList < int >> FindThreeSum(int[] nums) {
+  Array.Sort(nums);
+
+  var result = new List < IList < int >> ();
+
+  if (nums[0] > 0) return result;
+
+  for (int i = 0; i < nums.Length - 2; i++) {
+    if (nums[i] > 0) break;
+    if (i > 0 && nums[i] == nums[i - 1]) continue;
+
+    int left = i + 1;
+    int right = nums.Length - 1;
+
+    while (left < right) {
+      int sum = nums[i] + nums[left] + nums[right];
+
+      if (sum == 0) {
+        result.Add(new List < int > {
+          nums[i],
+          nums[left],
+          nums[right]
+        });
+
+        while (left < right && nums[left] == nums[left + 1]) left++;
+        while (left < right && nums[right] == nums[right - 1]) right--;
+
+        left++;
+        right--;
+      } else if (sum < 0) left++;
+      else right--;
+    }
+  }
+
+  return result;
+}`;

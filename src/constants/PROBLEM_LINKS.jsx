@@ -24,3 +24,6 @@ export const INTERSECTION_OF_TWO_ARRAYS_LINK =
 export const REVERSE_INTEGER_LINK = 'https://leetcode.com/problems/reverse-integer';
 export const MEDIAN_OF_TWO_SORTED_ARRAYS_LINK =
 	'https://leetcode.com/problems/median-of-two-sorted-arrays';
+export const ZIGZAG_CONVERSION_LINK = 'https://leetcode.com/problems/zigzag-conversion';
+export const TWO_SUM_LINK = 'https://leetcode.com/problems/two-sum';
+export const THREE_SUM_LINK = 'https://leetcode.com/problems/3sum';
