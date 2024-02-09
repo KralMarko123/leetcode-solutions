@@ -27,3 +27,6 @@ export const MEDIAN_OF_TWO_SORTED_ARRAYS_LINK =
 export const ZIGZAG_CONVERSION_LINK = 'https://leetcode.com/problems/zigzag-conversion';
 export const TWO_SUM_LINK = 'https://leetcode.com/problems/two-sum';
 export const THREE_SUM_LINK = 'https://leetcode.com/problems/3sum';
+export const STRING_TO_INTEGER_ATOI_LINK = 'https://leetcode.com/problems/string-to-integer-atoi';
+export const REMOVE_NTH_NODE_FROM_END_OF_LIST_LINK =
+	'https://leetcode.com/problems/remove-nth-node-from-end-of-list';

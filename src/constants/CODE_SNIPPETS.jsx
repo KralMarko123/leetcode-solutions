@@ -374,3 +374,58 @@ export const THREE_SUM_SNIPPET = `public static IList < IList < int >> FindThree
 
   return result;
 }`;
+export const STRING_TO_INTEGER_ATOI_SNIPPET = `public static int MyAtoi(string s) {
+  if (s == string.Empty || s[0] == '.') return 0;
+
+  string result = string.Empty;
+  bool isNegative = false;
+  int i = 0;
+
+  while (i < s.Length && s[i] == ' ') i++;
+
+  if (i < s.Length && (s[i] == '-' || s[i] == '+')) {
+    isNegative = s[i] == '-';
+    i++;
+  }
+
+  while (i < s.Length && char.IsDigit(s[i])) {
+    result += s[i].ToString();
+    i++;
+  }
+
+  result = result.TrimStart('0');
+
+  if (result.Length == 0) return 0;
+  if (int.TryParse(result, out int value)) return isNegative ? value * -1 : value;
+  return isNegative ? int.MinValue : int.MaxValue;
+}`;
+export const REMOVE_NTH_NODE_FROM_END_OF_LIST_SNIPPET = `public static ListNode? RemoveNthFromEnd(ListNode head, int n) {
+  int length = 0, pos = 1;
+  ListNode p = head;
+
+  while (p != null) {
+    length++;
+    p = p.next;
+  }
+
+  if (length == 1) return null;
+
+  p = head;
+
+  while (p != null) {
+    if (pos == length - n) {
+      p.next = p.next.next;
+      break;
+    }
+
+    if (pos > length - n) {
+      head = p.next;
+      break;
+    }
+
+    pos++;
+    p = p.next;
+  }
+
+  return head;
+}`;
