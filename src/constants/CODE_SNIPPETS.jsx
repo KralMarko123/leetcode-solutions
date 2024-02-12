@@ -429,3 +429,19 @@ export const REMOVE_NTH_NODE_FROM_END_OF_LIST_SNIPPET = `public static ListNode?
 
   return head;
 }`;
+export const VALID_PARENTHESES_SNIPPET = `public static bool IsValid(string s) {
+  var stack = new Stack < char > ();
+  var dictionary = new Dictionary < char, char > () 
+  {
+    { '(', ')' },
+    { '[', ']' },
+    { '{', '}' }
+  };
+
+  foreach(char character in s) {
+    if (dictionary.ContainsKey(character)) stack.Push(dictionary[character]);
+    else if (stack.Count == 0 || character != stack.Pop()) return false;
+  }
+
+  return stack.Count == 0;
+}`;

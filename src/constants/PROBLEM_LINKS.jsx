@@ -30,3 +30,4 @@ export const THREE_SUM_LINK = 'https://leetcode.com/problems/3sum';
 export const STRING_TO_INTEGER_ATOI_LINK = 'https://leetcode.com/problems/string-to-integer-atoi';
 export const REMOVE_NTH_NODE_FROM_END_OF_LIST_LINK =
 	'https://leetcode.com/problems/remove-nth-node-from-end-of-list';
+export const VALID_PARENTHESES_LINK = 'https://leetcode.com/problems/valid-parentheses';
