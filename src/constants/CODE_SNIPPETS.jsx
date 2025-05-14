@@ -445,3 +445,16 @@ export const VALID_PARENTHESES_SNIPPET = `public static bool IsValid(string s) {
 
   return stack.Count == 0;
 }`;
+export const FIND_DISAPPEARED_NUMBERS_SNIPPET = `public static IList<int> FindDisappearedNumbers(int[] nums)
+{
+    var range = nums.Length;
+    var result = new HashSet<int>();
+    var numsSet = new HashSet<int>(nums);
+
+    for (var i = 1; i <= range; i++)
+    {
+        if (!numsSet.Contains(i)) result.Add(i);
+    }
+
+    return [.. result];
+}`
